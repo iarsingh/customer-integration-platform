@@ -1,5 +1,12 @@
 # Customer Integration Platform
 
+## Overview
+
+A customer engineering exercise that gates a webhook integration before it touches a customer system. `POST /check` passes only when both `mapping` and `sandbox_ok` are true, and writes to the customer ledger are refused by always returning `applied: false`. A versioned `/v1` ops API adds workspaces, tenant isolation, job approval and audit, and the service ships with a Dockerfile, a docker-compose file and a pytest suite run in GitHub Actions.
+
+- **Built with:** Python, pytest, Docker, GitHub Actions
+- **Scope:** Local laptop lab; it never writes to a customer ledger and does not apply production changes.
+
 <!-- project-guide:start -->
 ## Project guide
 
